@@ -2,8 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/user/.oh-my-zsh
-
+export ZSH=/home/spreadingmind/.dotfiles/oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -92,10 +91,9 @@ RPROMPT='[%T]'
 
 alias gpl='git pull'
 alias gps='git push'
-alias gd2='git checkout development2 && git pull'
-alias gd='git checkout develop && git pull'
 alias ga='git add'
 alias gc='git commit -m'
+alias gcn='git commit --no-verify -m'
 alias gco='git checkout'
 alias gmlb='git merge @{-1}'
 alias gs='git status'
@@ -129,13 +127,22 @@ alias ports='netstat -atun'
 alias dt='~/notes/disable_touchscreen.sh'
 alias checkvpn='mtr office.bekitzur.com'
 alias tfvpn='sudo service strongswan start'
-alias macmini='ssh dev@192.168.10.137 -i ~/.ssh/thinfilm_key.pub'
+alias macmini='ssh user2@192.168.20.225 -i ~/.ssh/thinfilm_key.pub'
 alias zshrc='source ~/.zshrc'
 alias proc='ps aux | grep'
 alias socksproxy='ssh -D 40372 -fCqN liza@capo-1.volochay.info -i ~/.ssh/my_new_key'
-alias boost='~/boost_sound.sh'
 alias extract='tar xvf'
+alias boost='~/bash_scripts/boost_volume.sh'
+alias weather='curl http://wttr.in'
+alias mongo-image='sudo docker run --rm -v /var/lib/mongodb:/var/lib/mongodb -it -p 27017:27017 mongo:3.6 mongod'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/spreadingmind/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/spreadingmind/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/spreadingmind/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/spreadingmind/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
